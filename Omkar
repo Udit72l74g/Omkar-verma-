@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Omkar Varma 🎉</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  }
+
+  p {
+    color: #fff;
+    font-size: 1.1rem;
+    max-width: 90%;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+  }
+
+  .gif {
+    width: 200px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  }
+
+  /* Confetti animation */
+  .confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  .confetti span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: hsl(var(--hue), 90%, 60%);
+    animation: fall 3s linear infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday Omkar Varma 🎂</h1>
+  <p>Happy Birthday mere bhai ko — tu humesha khush reh aur accha kare.<br> Main tere sath hu 💪🎉</p>
+  <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Birthday Cake" class="gif">
+
+  <div class="confetti" id="confetti"></div>
+
+  <script>
+    // Confetti generator
+    const confettiContainer = document.getElementById('confetti');
+    for (let i = 0; i < 100; i++) {
+      const span = document.createElement('span');
+      span.style.setProperty('--hue', Math.floor(Math.random() * 360));
+      span.style.left = Math.random() * 100 + 'vw';
+      span.style.animationDuration = (2 + Math.random() * 3) + 's';
+      span.style.animationDelay = Math.random() * 2 + 's';
+      confettiContainer.appendChild(span);
+    }
+  </script>
+</body>
+</html>
